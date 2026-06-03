@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Happy Birthday, Ngu War Moe 💖</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(145deg, #ffdde1 0%, #f9c9e2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #5e2a3e;
+            scroll-behavior: smooth;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 8;
+            overflow: hidden;
+        }
+
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 25;
+            overflow: hidden;
+        }
+        .confetti-piece {
+            position: absolute;
+            width: 8px;
+            height: 12px;
+            border-radius: 2px;
+            opacity: 0.95;
+            animation: confetti-fall 9s ease-out forwards;
+            pointer-events: none;
+            filter: drop-shadow(0 0 1px rgba(0,0,0,0.12));
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 1.8rem;
+            opacity: 0.6;
+            animation: floatUp 8s linear forwards;
+            color: #ff4d6d;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+        @keyframes confetti-fall {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 0.8rem;
+            position: relative;
+            z-index: 20;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding: 1.2rem 0.8rem;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(6px);
+            border-radius: 50px;
+            box-shadow: 0 15px 25px rgba(244, 114, 154, 0.15);
+        }
+
+        .greeting {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.4rem, 6vw, 2.8rem);
+            font-weight: 700;
+            color: #b13e5c;
+        }
+
+        .name {
+            font-size: clamp(1.6rem, 7vw, 3rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, #c44569, #e84393);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 0.3rem 0;
+        }
+
+        .date-badge {
+            background: #ffecf0;
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            border-radius: 40px;
+            font-size: clamp(0.75rem, 3.2vw, 1rem);
+        }
+
+        /* Today's Special Card */
+        .today-card {
+            background: linear-gradient(135deg, #fff0f5, #ffe4ed);
+            border-radius: 35px;
+            padding: 0.8rem;
+            margin: 1rem 0;
+            text-align: center;
+            border: 1px solid #ffb7c7;
+        }
+        .today-label {
+            font-size: clamp(0.8rem, 3.5vw, 0.9rem);
+            color: #c44569;
+            font-weight: 500;
+        }
+        .today-date {
+            font-size: clamp(1.1rem, 5vw, 1.5rem);
+            font-weight: 700;
+            color: #e84393;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        /* Calendar Card */
+        .calendar-card {
+            background: linear-gradient(135deg, #fff5f8, #ffe8f0);
+            border-radius: 40px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(197, 69, 98, 0.2);
+            border: 1px solid rgba(255, 140, 170, 0.4);
+        }
+        .calendar-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.3rem, 5vw, 2rem);
+            color: #c44569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 0.8rem;
+        }
+        .calendar-flex {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 0.8rem;
+        }
+        .calendar-wrapper {
+            background: white;
+            border-radius: 30px;
+            padding: 0.8rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            max-width: 100%;
+            width: 560px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+        .girlfriend-photo-card {
+            background: #fff7fb;
+            border-radius: 30px;
+            padding: 0.8rem;
+            box-shadow: 0 8px 20px rgba(197, 69, 98, 0.15);
+            max-width: 320px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .girlfriend-photo-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 25px;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(197, 69, 98, 0.12);
+        }
+        .girlfriend-photo-caption {
+            margin-top: 0.75rem;
+            font-size: clamp(0.85rem, 3vw, 1rem);
+            color: #b13e5c;
+            font-weight: 600;
+            text-align: center;
+        }
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.3rem 0.5rem;
+            background: #ffecf0;
+            border-radius: 40px;
+            margin-bottom: 0.8rem;
+            gap: 0.5rem;
+        }
+        .calendar-nav-btn {
+            background: #ff85a1;
+            border: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .calendar-nav-btn:active {
+            transform: scale(0.95);
+        }
+        .month-year-display {
+            font-weight: 600;
+            font-size: clamp(0.9rem, 4vw, 1.1rem);
+            color: #b13e5c;
+            text-align: center;
+        }
+        .calendar-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        .weekday {
+            font-weight: 600;
+            color: #c44569;
+            font-size: clamp(0.65rem, 2.8vw, 0.8rem);
+            padding: 4px 2px;
+        }
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            text-align: center;
+        }
+        .calendar-day {
+            padding: 6px 2px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: clamp(0.7rem, 3vw, 0.85rem);
+            font-weight: 500;
+            background: #fff;
+            position: relative;
+        }
+        .calendar-day:active {
+            transform: scale(0.95);
+        }
+        .calendar-day.special-day {
+            background: linear-gradient(135deg, #ff85a1, #ff4d6d);
+            color: white;
+            box-shadow: 0 3px 10px rgba(255,77,109,0.4);
+            animation: pulse-glow 1.5s infinite;
+            font-weight: bold;
+        }
+        .calendar-day.today-highlight {
+            border: 2px solid #e84393;
+            background: #fff0f5;
+            font-weight: bold;
+        }
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(255,77,109,0.5); }
+            70% { box-shadow: 0 0 0 6px rgba(255,77,109,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,77,109,0); }
+        }
+        .special-date-note {
+            margin-top: 0.8rem;
+            background: rgba(255,240,245,0.9);
+            border-radius: 40px;
+            padding: 0.5rem;
+            font-size: clamp(0.7rem, 3vw, 0.85rem);
+            color: #b13e5c;
+        }
+        .special-date-note span {
+            font-weight: bold;
+            color: #e84393;
+        }
+
+        /* Memory Card */
+        .memory-card {
+            background: rgba(255, 248, 250, 0.85);
+            backdrop-filter: blur(4px);
+            border-radius: 40px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .memory-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.2rem, 4.5vw, 1.8rem);
+            color: #b13e5c;
+        }
+        .photo-strip {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 1rem;
+            animation: photo-strip-sway 12s ease-in-out infinite;
+        }
+        .polaroid {
+            background: #fffef7;
+            padding: 0.5rem 0.5rem 1rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            width: clamp(120px, 40vw, 170px);
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            transform-origin: center bottom;
+            animation: polaroid-swing 8s ease-in-out infinite;
+        }
+        .polaroid:hover {
+            transform: translateY(-10px) scale(1.04) rotate(-1deg);
+            box-shadow: 0 16px 30px rgba(0,0,0,0.15);
+        }
+        .polaroid:active {
+            transform: scale(0.98);
+        }
+        .polaroid img {
+            width: 100%;
+            height: clamp(100px, 25vw, 150px);
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        @keyframes photo-strip-sway {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(3px); }
+            50% { transform: translateX(0); }
+            75% { transform: translateX(-3px); }
+        }
+        @keyframes polaroid-swing {
+            0%, 100% { transform: rotate(-1deg); }
+            50% { transform: rotate(1deg); }
+        }
+        .polaroid .caption {
+            font-size: clamp(0.6rem, 2.8vw, 0.75rem);
+            padding-top: 0.5rem;
+            color: #a23d58;
+        }
+
+        /* Video Section */
+        .video-surprise {
+            background: linear-gradient(135deg, #fff0f5, #ffe4ed);
+            border-radius: 40px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .video-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.2rem, 4.5vw, 1.7rem);
+            color: #c44569;
+            margin-bottom: 0.8rem;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            background: #1a0f12;
+        }
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .video-poster-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .video-progress-container {
+            width: 100%;
+            background: rgba(0,0,0,0.7);
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+        .video-progress-container.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .video-progress-bar {
+            flex: 1;
+            height: 4px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 10px;
+            cursor: pointer;
+            min-width: 120px;
+        }
+        .video-progress-filled {
+            width: 0%;
+            height: 100%;
+            background: #ff4d6d;
+            border-radius: 10px;
+        }
+        .video-time {
+            color: white;
+            font-size: 10px;
+            font-family: monospace;
+            background: rgba(0,0,0,0.5);
+            padding: 2px 6px;
+            border-radius: 20px;
+        }
+        .video-controls {
+            margin-top: 0.8rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+        .download-actions {
+            margin-top: 0.8rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+        .video-btn {
+            background: #ff85a1;
+            border: none;
+            padding: 6px 15px;
+            border-radius: 35px;
+            font-weight: 500;
+            color: white;
+            cursor: pointer;
+            font-size: clamp(0.7rem, 3vw, 0.85rem);
+        }
+        .video-btn.save-btn {
+            background: #ffb6c1;
+            color: #5e2a3e;
+        }
+        .video-btn.download-btn {
+            background: #e84393;
+        }
+        .video-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Message Box */
+        .message-box {
+            background: #fff0f5;
+            border-radius: 40px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .quote {
+            font-size: clamp(0.85rem, 4vw, 1.2rem);
+            font-style: italic;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+            color: #8f3b55;
+        }
+        .surprise-btn {
+            background: linear-gradient(100deg, #ff85a1, #ff4d6d);
+            border: none;
+            padding: 8px 20px;
+            font-size: clamp(0.8rem, 3.5vw, 1rem);
+            font-weight: 600;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            min-width: 180px;
+        }
+
+        .hidden-surprise {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s ease, padding 0.6s ease, margin 0.6s ease;
+            background: #ffeef4;
+            border-radius: 35px;
+        }
+        .hidden-surprise.show {
+            max-height: 1200px;
+            padding: 1rem;
+            margin-top: 1rem;
+            overflow: auto;
+        }
+        .hidden-surprise .surprise-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .hidden-surprise .surprise-content p {
+            width: 100%;
+            margin: 0;
+            white-space: pre-line;
+            text-align: center;
+            color: #8f3b55;
+        }
+
+        /* Music Section */
+        .music-wish {
+            background: rgba(255, 235, 240, 0.8);
+            border-radius: 40px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .music-controls {
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+        .music-btn {
+            background: #ffe0e8;
+            border: 1px solid #f5a5bb;
+            padding: 6px 16px;
+            border-radius: 35px;
+            font-weight: 500;
+            color: #b53b5a;
+            cursor: pointer;
+            font-size: clamp(0.7rem, 3vw, 0.85rem);
+        }
+        .music-progress-container {
+            width: 95%;
+            max-width: 350px;
+            margin: 8px auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+        .music-progress-container.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .music-progress-bar {
+            flex: 1;
+            height: 5px;
+            background: #e0b4c1;
+            border-radius: 10px;
+            cursor: pointer;
+            min-width: 120px;
+        }
+        .music-progress-filled {
+            width: 0%;
+            height: 100%;
+            background: #e84393;
+            border-radius: 10px;
+        }
+        .music-time {
+            font-size: 10px;
+            font-family: monospace;
+            background: #ffe0e8;
+            padding: 2px 8px;
+            border-radius: 25px;
+        }
+        .final-wish {
+            font-size: clamp(1rem, 5vw, 1.4rem);
+            font-family: 'Dancing Script', cursive;
+            margin-top: 0.8rem;
+            font-weight: 600;
+            background: #ffe3ec;
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+        }
+
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .video-modal.active { display: flex; }
+        .modal-video { width: 95%; max-width: 95%; border-radius: 15px; }
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 0.8rem;
+            font-size: 0.65rem;
+            opacity: 0.7;
+        }
+        .click-effect {
+            position: fixed;
+            pointer-events: none;
+            font-size: 1.5rem;
+            animation: popFade 0.5s ease-out forwards;
+            z-index: 999;
+        }
+        @keyframes popFade {
+            0% { transform: scale(0.4); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        
+        @media (max-width: 768px) {
+            .calendar-flex {
+                flex-direction: column;
+                align-items: center;
+            }
+            .calendar-wrapper,
+            .girlfriend-photo-card {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            .container { padding: 0.6rem; }
+            .calendar-wrapper { padding: 0.5rem; }
+            .message-box {
+                padding: 0.8rem;
+            }
+            .quote {
+                font-size: 0.95rem;
+            }
+            .surprise-btn {
+                min-width: unset;
+                width: 100%;
+            }
+            .hidden-surprise.show {
+                padding: 0.8rem;
+            }
+            .surprise-content {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+            .surprise-content p {
+                width: 100%;
+                margin: 0;
+                white-space: normal;
+            }
+            .calendar-day { padding: 4px 1px; }
+            .polaroid { width: calc(50% - 0.6rem); min-width: 110px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="floating-hearts" id="heartsContainer"></div>
+<div class="confetti-container" id="confettiContainer"></div>
+<div class="container">
+    <div class="hero">
+        <div class="greeting">🎂 Happy Birthday, my everything 🎂</div>
+        <div class="name">Ngu War Moe</div>
+        <div class="date-badge">✨ Happy 22th Birthday! ✨</div>
+    </div>
+
+    <!-- Today's Date Display -->
+    <div class="today-card" id="todayCard">
+        <div class="today-label">📅 Today is</div>
+        <div class="today-date" id="todayDateDisplay"></div>
+        <div class="today-label" style="margin-top: 5px;" id="specialMessageToday"></div>
+    </div>
+
+    <!-- Calendar - Every July 30th is Special from 2004 onwards -->
+    <div class="calendar-card">
+        <div class="calendar-title">
+            <span>📅</span> Your Birthday Calendar <span>💖</span>
+        </div>
+        <div class="calendar-flex">
+            <div class="calendar-wrapper">
+                <div class="calendar-header">
+                    <button class="calendar-nav-btn" id="prevMonthBtn">◀</button>
+                    <div class="month-year-display" id="monthYearDisplay"></div>
+                    <button class="calendar-nav-btn" id="nextMonthBtn">▶</button>
+                </div>
+                <div class="calendar-weekdays">
+                    <div class="weekday">S</div><div class="weekday">M</div><div class="weekday">T</div>
+                    <div class="weekday">W</div><div class="weekday">T</div><div class="weekday">F</div>
+                    <div class="weekday">S</div>
+                </div>
+                <div class="calendar-days" id="calendarDays"></div>
+            </div>
+            <div class="girlfriend-photo-card">
+                <img src="photos/6.jpeg" alt="Girlfriend photo">
+                <!-- <div class="girlfriend-photo-caption">My beautiful love, forever by my side.</div> -->
+            </div>
+        </div>
+        <div class="special-date-note">
+            💝 <span>✨ Every July 30th ✨</span> — Your Birthday! (from 2004 onwards)<br>
+            Tap any July 30th for a sweet surprise 💖
+        </div>
+    </div>
+
+    <div class="memory-card">
+        <div class="memory-title">📸 sweet memories 📸</div>
+        <div class="photo-strip" id="photoStrip">
+            <div class="polaroid" data-message="Love you forever 💕"><img src="photos/1.jpeg" alt="memory">
+                <!-- <div class="caption">✨ first adventure ✨</div> -->
+            </div>
+            <div class="polaroid" data-message="Every laugh with you is my favorite melody 🎵"><img src="photos/2.jpeg" alt="memory">
+                <!-- <div class="caption">☕ cozy mornings ☕</div> -->
+            </div>
+            <div class="polaroid" data-message="Your smile lights up my whole world 🌟"><img src="photos/3.jpeg" alt="memory">
+                <!-- <div class="caption">🌅 sunset promises 🌅</div> -->
+            </div>
+            <div class="polaroid" data-message="Forever grateful for you 💖"><img src="photos/4.jpeg" alt="memory">
+                <!-- <div class="caption">💑 endless love 💑</div> -->
+            </div>
+            <div class="polaroid" data-message="Forever grateful for you 💖"><img src="photos/7.jpeg" alt="memory">
+                <!-- <div class="caption">💑 endless love 💑</div> -->
+            </div>
+        </div>
+        <p style="margin-top:0.6rem; font-size:clamp(0.6rem, 2.8vw, 0.75rem);">❤️ tap any polaroid for a secret message ❤️</p>
+    </div>
+
+    <div class="video-surprise">
+        <div class="video-title">🎬 A Special Gift Just for You 🎬</div>
+        <div class="video-container">
+            <video id="birthdayVideo" poster="photos/video_thumbnail.jpg" preload="metadata">
+                <source src="media/vd2.mp4" type="video/mp4">
+                <!-- <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4"> -->
+            </video>
+            <img id="videoPosterOverlay" class="video-poster-overlay" src="photos/video_thumbnail.jpg" alt="Video poster">
+            <div class="video-progress-container" id="videoProgressContainer">
+                <div class="video-progress-bar" id="videoProgressBar">
+                    <div class="video-progress-filled" id="videoProgressFilled"></div>
+                </div>
+                <div class="video-time" id="videoTimeDisplay">00:00 / 00:00</div>
+            </div>
+        </div>
+        <div class="video-controls">
+            <button class="video-btn" id="playVideoBtn">▶ Play</button>
+            <button class="video-btn" id="pauseVideoBtn">⏸ Pause</button>
+            <button class="video-btn" id="fullscreenVideoBtn">✨ Fullscreen ✨</button>
+        </div>
+        <div class="download-actions">
+            <button class="video-btn download-btn" id="downloadVideoBtn">⬇️ Download Video</button>
+        </div>
+        <div class="video-message" id="videoMessage" style="margin-top:0.6rem; font-size:clamp(0.7rem,3vw,0.85rem); color:#a23d58;">💝 Click play to see my heartfelt wish! 💝</div>
+    </div>
+
+    <div class="message-box">
+        <div class="quote" id="dynamicQuote">“Every day with you feels like a celebration, but today the universe shines brighter because you were born. You are my heart, my joy, my home.”</div>
+        <button class="surprise-btn" id="surpriseBtn">🎁 Click for a Birthday Surprise 🎁</button>
+        <div class="hidden-surprise" id="surprisePanel">
+            <div class="surprise-content">
+                <span>🎉🎈🎂</span>
+                <p style="font-weight:bold; margin:10px 0;">HAPPY BIRTHDAY MY LOVE!</p>
+                <p>I wrote a little something just for you ✨</p>
+                <p style="background:#ffd9e4; border-radius:25px; padding:10px; font-style:italic; text-align:left; color:#8f3b55;">
+                    "We may have gone our separate ways, but on your special day, I only wish for your happiness.
+
+                    May your journey ahead always be filled with light.
+                    May your laughter return and stay.
+                    May your dreams find their colors, one by one.
+
+                    May your new days be beautiful even where I no longer stand.
+                    May you find the joy you truly deserve.
+
+                    May the gentle glow of your birthday warm your heart.
+                    And from a distance, I’ll still be wishing you well… always.
+
+                    Happy Birthday to you. 🎂
+                    Take care of yourself." 💖
+                </p>
+                <p>🎀 With all my love. 🎀</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="music-wish">
+        <p style="font-weight:500;">🎵 A little birthday melody for you 🎵</p>
+        <div class="music-controls">
+            <button id="playMusicBtn" class="music-btn">🎶 Play Song</button>
+            <button id="stopMusicBtn" class="music-btn">🔇 Stop</button>
+        </div>
+        <div class="music-progress-container" id="musicProgressContainer">
+            <div class="music-progress-bar" id="musicProgressBar">
+                <div class="music-progress-filled" id="musicProgressFilled"></div>
+            </div>
+            <div class="music-time" id="musicTimeDisplay">00:00 / 00:00</div>
+        </div>
+        <audio id="birthdayAudio" preload="auto">
+            <source src="media/birthday_sound.mp3" type="audio/mpeg">
+            <!-- <source src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0c1b2c5f2.mp3?filename=happy-birthday-8-108766.mp3" type="audio/mpeg"> -->
+        </audio>
+        <div class="final-wish" id="finalWish">💗 Happy Birthday, My Princess 💗</div>
+    </div>
+    <footer>made with endless love ❤️ | July 30th is all about you <button class="video-btn save-btn" id="saveImageBtn">🖼️ Save as Image</button></footer>
+</div>
+
+<div id="videoModal" class="video-modal">
+    <span class="close-modal">&times;</span>
+    <video id="modalVideoPlayer" class="modal-video" controls></video>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+    // ========== HELPER FUNCTIONS ==========
+    function formatDate(day, month, year) {
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        return `${monthNames[month]} ${day}, ${year}`;
+    }
+    
+// Check if a date is July 30th and year >= 2004
+    function isSpecialDate(year, month, day) {
+        return (month === 6 && day === 30 && year >= 2004);
+    }
+    
+    // Update today's display
+    function updateTodayDisplay() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = today.getMonth();
+        const day = today.getDate();
+        const monthNamesFull = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        document.getElementById('todayDateDisplay').innerHTML = `${monthNamesFull[month]} ${day}, ${year}`;
+        
+        const specialMsgDiv = document.getElementById('specialMessageToday');
+        if(isSpecialDate(year, month, day)) {
+            specialMsgDiv.innerHTML = "🎉✨ TODAY IS YOUR BIRTHDAY! HAPPY BIRTHDAY! ✨🎉";
+            specialMsgDiv.style.fontWeight = "bold";
+            specialMsgDiv.style.color = "#e84393";
+            // Trigger hearts celebration
+            for(let i=0;i<20;i++) setTimeout(() => createCelebrationHeart(), i*80);
+        } else {
+            specialMsgDiv.innerHTML = "💖 Every day with you is a celebration 💖";
+        }
+    }
+    
+    // ========== CALENDAR LOGIC ==========
+    let currentYear = new Date().getFullYear();
+    let currentMonth = new Date().getMonth();
+    
+    function renderCalendar() {
+        const firstDay = new Date(currentYear, currentMonth, 1);
+        const startWeekday = firstDay.getDay();
+        const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+        
+        const calendarDaysDiv = document.getElementById('calendarDays');
+        const monthYearDisplay = document.getElementById('monthYearDisplay');
+        const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        monthYearDisplay.innerText = `${monthNames[currentMonth]} ${currentYear}`;
+        
+        calendarDaysDiv.innerHTML = '';
+        
+        // Empty cells for days before month starts
+        for(let i = 0; i < startWeekday; i++) {
+            const emptyDiv = document.createElement('div');
+            emptyDiv.classList.add('calendar-day');
+            emptyDiv.style.opacity = '0.3';
+            emptyDiv.style.background = 'transparent';
+            emptyDiv.style.cursor = 'default';
+            emptyDiv.innerText = '';
+            calendarDaysDiv.appendChild(emptyDiv);
+        }
+        
+        const today = new Date();
+        const todayYear = today.getFullYear();
+        const todayMonth = today.getMonth();
+        const todayDay = today.getDate();
+        
+        for(let day = 1; day <= daysInMonth; day++) {
+            const dayDiv = document.createElement('div');
+            dayDiv.classList.add('calendar-day');
+            dayDiv.innerText = day;
+            
+            // Check if this is a special date (July 30th from 2004 onwards)
+            if(isSpecialDate(currentYear, currentMonth, day)) {
+                dayDiv.classList.add('special-day');
+                dayDiv.innerHTML = `${day} 💖`;
+                dayDiv.title = '💖 Your Birthday! July 30th 💖';
+            }
+            
+            // Highlight today's date
+            if(todayYear === currentYear && todayMonth === currentMonth && todayDay === day) {
+                dayDiv.classList.add('today-highlight');
+            }
+            
+            // Add click event
+            dayDiv.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if(isSpecialDate(currentYear, currentMonth, day)) {
+                    const age = currentYear - 2004;
+                    let message = "";
+                    if(currentYear === 2004) message = "🎉 Happy birthday, beautiful! Welcome to the world! 🎉";
+                    else if(currentYear === 2005) message = "🎂 Happy 1st Birthday! 🎂";
+                    else message = `🎊 July 30th, ${currentYear} - Happy ${age}th Birthday! 🎊`;
+                    showFloatingMessage(message, e.clientX, e.clientY);
+                    createMiniBurst(e.clientX, e.clientY);
+                    for(let i=0;i<15;i++) setTimeout(() => createCelebrationHeart(), i*60);
+                } else {
+                    showFloatingMessage(`📅 ${day} ${monthNames[currentMonth]} ${currentYear} - Every day with you is special! 💕`, e.clientX, e.clientY);
+                }
+            });
+            
+            calendarDaysDiv.appendChild(dayDiv);
+        }
+    }
+    
+    document.getElementById('prevMonthBtn').addEventListener('click', () => {
+        if(currentMonth === 0) {
+            currentMonth = 11;
+            currentYear--;
+        } else {
+            currentMonth--;
+        }
+        renderCalendar();
+    });
+    
+    document.getElementById('nextMonthBtn').addEventListener('click', () => {
+        if(currentMonth === 11) {
+            currentMonth = 0;
+            currentYear++;
+        } else {
+            currentMonth++;
+        }
+        renderCalendar();
+    });
+    
+    // Initial render
+    renderCalendar();
+    updateTodayDisplay();
+    
+    let activeConfettiInterval = null;
+    let activeConfettiTimeout = null;
+    
+    function createCelebrationHeart() {
+        const heartSpan = document.createElement('div');
+        heartSpan.classList.add('heart');
+        heartSpan.innerHTML = '💖';
+        heartSpan.style.left = Math.random() * 100 + '%';
+        heartSpan.style.fontSize = 1.2 + Math.random() * 1.5 + 'rem';
+        heartSpan.style.animationDuration = 2 + Math.random() * 2 + 's';
+        heartsContainer.appendChild(heartSpan);
+        setTimeout(() => heartSpan.remove(), 2500);
+    }
+
+    function createConfettiPiece() {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti-piece';
+        const colors = ['#ff4d6d', '#ff85a1', '#ffb6c1', '#ffe4ed', '#f8c6d1', '#d97f9c', '#ffe066', '#f7a1c4'];
+        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.top = (-20 + Math.random() * 40) + 'px';
+        confetti.style.width = 6 + Math.random() * 8 + 'px';
+        confetti.style.height = 10 + Math.random() * 12 + 'px';
+        confetti.style.opacity = 0.75 + Math.random() * 0.2;
+        confetti.style.animationDuration = 2 + Math.random() * 3 + 's';
+        confetti.style.transform = `translateY(0px) rotate(${Math.random() * 360}deg)`;
+        const container = document.getElementById('confettiContainer');
+        container.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 3000);
+    }
+
+    function createConfettiBurst(count = 120) {
+        if(activeConfettiInterval) {
+            clearInterval(activeConfettiInterval);
+            activeConfettiInterval = null;
+        }
+        if(activeConfettiTimeout) {
+            clearTimeout(activeConfettiTimeout);
+            activeConfettiTimeout = null;
+        }
+
+        for(let i = 0; i < count; i++) {
+            setTimeout(createConfettiPiece, i * 20);
+        }
+
+        activeConfettiInterval = setInterval(() => {
+            for(let i = 0; i < 40; i++) {
+                setTimeout(createConfettiPiece, i * 15);
+            }
+        }, 800);
+
+        activeConfettiTimeout = setTimeout(() => {
+            clearInterval(activeConfettiInterval);
+            activeConfettiInterval = null;
+            activeConfettiTimeout = null;
+        }, 5000);
+    }
+
+    // === FLOATING HEARTS ===
+    const heartsContainer = document.getElementById('heartsContainer');
+    function createHeart() {
+        const heartSpan = document.createElement('div');
+        heartSpan.classList.add('heart');
+        const hearts = ['❤️', '💖', '💗', '💓', '🌸', '🎀', '✨','🌷', '💕', '🌻'];
+        heartSpan.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+        heartSpan.style.left = Math.random() * 100 + '%';
+        heartSpan.style.fontSize = 0.9 + Math.random() * 1.2 + 'rem';
+        heartSpan.style.animationDuration = 5 + Math.random() * 6 + 's';
+        heartsContainer.appendChild(heartSpan);
+        setTimeout(() => heartSpan.remove(), 7000);
+    }
+    setInterval(createHeart, 600);
+    
+    function showFloatingMessage(msg, x, y) {
+        const div = document.createElement('div');
+        div.innerText = msg;
+        div.style.position = 'fixed';
+        div.style.left = (x - 60) + 'px';
+        div.style.top = (y - 35) + 'px';
+        div.style.backgroundColor = '#ffebf0';
+        div.style.color = '#be2e56';
+        div.style.padding = '6px 12px';
+        div.style.borderRadius = '25px';
+        div.style.fontWeight = 'bold';
+        div.style.zIndex = '1000';
+        div.style.boxShadow = '0 3px 10px rgba(0,0,0,0.2)';
+        div.style.fontSize = 'clamp(0.7rem, 3vw, 0.85rem)';
+        div.style.maxWidth = '85vw';
+        div.style.whiteSpace = 'normal';
+        div.style.wordBreak = 'break-word';
+        document.body.appendChild(div);
+        setTimeout(() => { div.style.opacity = '0'; setTimeout(() => div.remove(), 400); }, 1800);
+    }
+    
+    function createMiniBurst(x, y) {
+        for(let i=0;i<5;i++) {
+            const burst = document.createElement('div');
+            burst.innerText = '❤️';
+            burst.classList.add('click-effect');
+            burst.style.left = (x - 8 + (Math.random() * 25 - 12)) + 'px';
+            burst.style.top = (y - 8 + (Math.random() * 25 - 12)) + 'px';
+            document.body.appendChild(burst);
+            setTimeout(() => burst.remove(), 500);
+        }
+    }
+    
+    document.querySelectorAll('.polaroid').forEach(p => {
+        p.addEventListener('click', (e) => {
+            const msg = p.getAttribute('data-message') || "💕 You're my favorite!";
+            showFloatingMessage(msg, e.clientX, e.clientY);
+            createMiniBurst(e.clientX, e.clientY);
+        });
+    });
+    
+    // Surprise Panel
+    const surpriseBtn = document.getElementById('surpriseBtn');
+    const surprisePanel = document.getElementById('surprisePanel');
+    surpriseBtn.addEventListener('click', () => {
+        if(surprisePanel.classList.contains('show')) {
+            surprisePanel.classList.remove('show');
+            surpriseBtn.innerText = '🎁 Click for a Birthday Surprise 🎁';
+        } else {
+            surprisePanel.classList.add('show');
+            surpriseBtn.innerText = '✨ Surprise Revealed! ✨';
+            for(let i=0;i<12;i++) setTimeout(() => createCelebrationHeart(), i*70);
+        }
+    });
+    
+    // Video Functions
+    const video = document.getElementById('birthdayVideo');
+    const videoPosterOverlay = document.getElementById('videoPosterOverlay');
+    const playBtn = document.getElementById('playVideoBtn');
+    const pauseBtn = document.getElementById('pauseVideoBtn');
+    const fullBtn = document.getElementById('fullscreenVideoBtn');
+    const videoProgressContainer = document.getElementById('videoProgressContainer');
+    const videoProgressBar = document.getElementById('videoProgressBar');
+    const videoProgressFilled = document.getElementById('videoProgressFilled');
+    const videoTimeDisplay = document.getElementById('videoTimeDisplay');
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideoPlayer');
+    const closeModal = document.querySelector('.close-modal');
+    
+    function formatTime(seconds) {
+        if(isNaN(seconds) || !isFinite(seconds)) return "00:00";
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+    }
+    function updateVideoProgress() {
+        if(video.duration && !isNaN(video.duration)) {
+            const percent = (video.currentTime / video.duration) * 100;
+            videoProgressFilled.style.width = percent + '%';
+            videoTimeDisplay.innerText = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+        }
+    }
+    video.addEventListener('play', () => {
+        videoProgressContainer.classList.add('show');
+        if(videoPosterOverlay) videoPosterOverlay.style.display = 'none';
+    });
+    video.addEventListener('timeupdate', updateVideoProgress);
+    video.addEventListener('loadedmetadata', () => videoTimeDisplay.innerText = `00:00 / ${formatTime(video.duration)}`);
+    video.addEventListener('ended', () => {
+        if(videoPosterOverlay) videoPosterOverlay.style.display = 'block';
+        video.currentTime = 0;
+        video.pause();
+        videoProgressFilled.style.width = '0%';
+        videoTimeDisplay.innerText = `00:00 / ${formatTime(video.duration)}`;
+    });
+    playBtn.addEventListener('click', () => {
+        if(videoPosterOverlay) videoPosterOverlay.style.display = 'none';
+        video.play().catch(() => video.play());
+        createConfettiBurst(30);
+    });
+    pauseBtn.addEventListener('click', () => video.pause());
+    fullBtn.addEventListener('click', () => {
+        modalVideo.src = video.currentSrc || video.src;
+        modalVideo.load();
+        modalVideo.play();
+        modal.classList.add('active');
+    });
+    closeModal.addEventListener('click', () => { modal.classList.remove('active'); modalVideo.pause(); });
+    modal.addEventListener('click', (e) => { if(e.target === modal) { modal.classList.remove('active'); modalVideo.pause(); } });
+    videoProgressBar.addEventListener('click', (e) => {
+        const rect = videoProgressBar.getBoundingClientRect();
+        const percent = (e.clientX - rect.left) / rect.width;
+        if(video.duration) video.currentTime = percent * video.duration;
+    });
+
+    const downloadVideoBtn = document.getElementById('downloadVideoBtn');
+    const saveImageBtn = document.getElementById('saveImageBtn');
+
+    downloadVideoBtn.addEventListener('click', () => {
+        const src = video.currentSrc || video.querySelector('source').src;
+        if(!src) return;
+        const link = document.createElement('a');
+        link.href = src;
+        link.download = src.split('/').pop().split('?')[0] || 'birthday_video.mp4';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+    });
+
+    saveImageBtn.addEventListener('click', async () => {
+        const container = document.querySelector('.container');
+        if(!container) return;
+        try {
+            const canvas = await html2canvas(container, {useCORS:true, scale:2});
+            canvas.toBlob((blob) => {
+                if(!blob) return;
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'birthday_page.png';
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+                URL.revokeObjectURL(link.href);
+            }, 'image/png');
+        } catch (error) {
+            alert('Unable to save image. Please try using your browser screenshot tool.');
+            console.error(error);
+        }
+    });
+    
+    // Music Functions
+    const audioElem = document.getElementById('birthdayAudio');
+    const playMusic = document.getElementById('playMusicBtn');
+    const stopMusic = document.getElementById('stopMusicBtn');
+    const musicProgressContainer = document.getElementById('musicProgressContainer');
+    const musicProgressBar = document.getElementById('musicProgressBar');
+    const musicProgressFilled = document.getElementById('musicProgressFilled');
+    const musicTimeDisplay = document.getElementById('musicTimeDisplay');
+    
+    audioElem.volume = 0.35;
+    function updateMusicProgress() {
+        if(audioElem.duration && !isNaN(audioElem.duration)) {
+            const percent = (audioElem.currentTime / audioElem.duration) * 100;
+            musicProgressFilled.style.width = percent + '%';
+            musicTimeDisplay.innerText = `${formatTime(audioElem.currentTime)} / ${formatTime(audioElem.duration)}`;
+        }
+    }
+    audioElem.addEventListener('play', () => musicProgressContainer.classList.add('show'));
+    audioElem.addEventListener('timeupdate', updateMusicProgress);
+    audioElem.addEventListener('loadedmetadata', () => musicTimeDisplay.innerText = `00:00 / ${formatTime(audioElem.duration)}`);
+    playMusic.addEventListener('click', () => audioElem.play().catch(() => audioElem.play()));
+    stopMusic.addEventListener('click', () => { audioElem.pause(); audioElem.currentTime = 0; musicProgressFilled.style.width = '0%'; musicTimeDisplay.innerText = "00:00 / 00:00"; musicProgressContainer.classList.remove('show'); });
+    musicProgressBar.addEventListener('click', (e) => {
+        const rect = musicProgressBar.getBoundingClientRect();
+        const percent = (e.clientX - rect.left) / rect.width;
+        if(audioElem.duration) audioElem.currentTime = percent * audioElem.duration;
+    });
+    
+    // Random love clicks
+    document.body.addEventListener('click', (e) => {
+        if(e.target.closest('.polaroid') || e.target.closest('button') || e.target.closest('.calendar-day')) return;
+        if(Math.random() > 0.45) return;
+        const msgs = ["💕 You are beautiful", "🎂 My gift is my heart", "💖 Love you always", "🌸 Happy Birthday baby"];
+        showFloatingMessage(msgs[Math.floor(Math.random()*msgs.length)], e.clientX, e.clientY);
+    });
+    
+    // Gradient & Quotes
+    let hue = 0;
+    setInterval(() => {
+        document.getElementById('finalWish').style.background = `linear-gradient(120deg, #ffe1ec, hsl(${hue}, 80%, 75%))`;
+        hue = (hue+3)%360;
+    }, 2000);
+    
+    const quotes = ["“You are the finest, loveliest, most beautiful person.”","“Every love story is beautiful, but ours is my favorite.”","“Your smile is my favorite kind of sunrise.”"];
+    let qi = 0;
+    setInterval(() => {
+        if(!surprisePanel.classList.contains('show')) document.getElementById('dynamicQuote').innerHTML = quotes[qi++%quotes.length];
+    }, 6000);
+    
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const note = document.createElement('div');
+            note.innerText = '💖 Every July 30th is your birthday! Tap any glowing date in the calendar! 💖';
+            note.style.position = 'fixed';
+            note.style.bottom = '70px';
+            note.style.left = '50%';
+            note.style.transform = 'translateX(-50%)';
+            note.style.backgroundColor = '#1e1a2fcc';
+            note.style.color = '#ffdae5';
+            note.style.padding = '6px 12px';
+            note.style.borderRadius = '40px';
+            note.style.fontSize = '0.7rem';
+            note.style.zIndex = '1000';
+            note.style.backdropFilter = 'blur(8px)';
+            note.style.whiteSpace = 'nowrap';
+            document.body.appendChild(note);
+            setTimeout(() => { note.style.opacity = '0'; setTimeout(() => note.remove(), 400); }, 4000);
+        }, 500);
+    });
+</script>
+</body>
+</html>
