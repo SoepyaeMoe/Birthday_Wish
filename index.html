@@ -388,6 +388,64 @@
             height: auto;
             display: block;
         }
+        .video-scroll-row {
+            display: flex;
+            gap: 0.9rem;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0.2rem 0.15rem 0.6rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .video-scroll-row::-webkit-scrollbar {
+            height: 8px;
+        }
+        .video-scroll-row::-webkit-scrollbar-thumb {
+            background: rgba(232, 67, 147, 0.45);
+            border-radius: 999px;
+        }
+        .video-card {
+            flex: 0 0 270px;
+            max-width: 270px;
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(255, 165, 190, 0.55);
+            border-radius: 28px;
+            padding: 0.6rem;
+            box-shadow: 0 14px 28px rgba(197, 69, 98, 0.14);
+            scroll-snap-align: start;
+        }
+        .video-card-inner {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            border-radius: 22px;
+            overflow: hidden;
+            background: #1a0f12;
+        }
+        .video-card video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 22px;
+            background: #1a0f12;
+        }
+        .video-card-label {
+            margin-top: 0.45rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #b13e5c;
+        }
+        .video-card-caption {
+            font-size: 0.78rem;
+            color: #8f3b55;
+            line-height: 1.4;
+            margin-top: 0.2rem;
+        }
+        .video-note {
+            font-size: clamp(0.75rem, 3vw, 0.9rem);
+            color: #9b4f69;
+            margin-top: 0.35rem;
+        }
         .video-poster-overlay {
             position: absolute;
             top: 0;
@@ -764,29 +822,55 @@
     </div>
 
     <div class="video-surprise">
-        <div class="video-title">🎬 A Special Gift Just for You 🎬</div>
-        <div class="video-container">
-            <video id="birthdayVideo" poster="photos/video_thumbnail.jpg" preload="metadata">
-                <source src="media/vd2.mp4" type="video/mp4">
-                <!-- <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4"> -->
-            </video>
-            <img id="videoPosterOverlay" class="video-poster-overlay" src="photos/video_thumbnail.jpg" alt="Video poster">
-            <div class="video-progress-container" id="videoProgressContainer">
-                <div class="video-progress-bar" id="videoProgressBar">
-                    <div class="video-progress-filled" id="videoProgressFilled"></div>
+        <div class="video-title">🎬 Special Gift Just For You 🎬</div>
+        <p class="video-note">I hope you will love it!</p>
+        <div class="video-scroll-row">
+            <article class="video-card">
+                <div class="video-card-inner">
+                    <video class="story-video" controls playsinline preload="metadata" poster="photos/video_thumbnail.jpg">
+                        <source src="media/vd2.mp4" type="video/mp4">
+                    </video>
                 </div>
-                <div class="video-time" id="videoTimeDisplay">00:00 / 00:00</div>
-            </div>
+                <div class="video-card-label">💌 Sweet Wish</div>
+                <p class="video-card-caption">A warm birthday message in a mobile-friendly TikTok frame.</p>
+            </article>
+            <article class="video-card">
+                <div class="video-card-inner">
+                    <video class="story-video" controls playsinline preload="metadata" poster="photos/video_thumbnail_1.jpg">
+                        <source src="media/vd3.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-card-label">✨ Birthday Glow</div>
+                <p class="video-card-caption">More love, more sparkle, and a little extra celebration.</p>
+            </article>
+            <article class="video-card">
+                <div class="video-card-inner">
+                    <video class="story-video" controls playsinline preload="metadata" poster="photos/video_thumbnail_2.jpg">
+                        <source src="media/vd4.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-card-label">💕 Forever Love</div>
+                <p class="video-card-caption">A soft, cinematic clip styled to feel just like your favorite social feed.</p>
+            </article>
+            <article class="video-card">
+                <div class="video-card-inner">
+                    <video class="story-video" controls playsinline preload="metadata" poster="photos/video_thumbnail_3.jpg">
+                        <source src="media/vd5.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-card-label">🌸 Sparkle Moment</div>
+                <p class="video-card-caption">An extra clip to keep the birthday vibe flowing.</p>
+            </article>
+            <article class="video-card">
+                <div class="video-card-inner">
+                    <video class="story-video" controls playsinline preload="metadata" poster="photos/video_thumbnail_4.jpg">
+                        <source src="media/vd6.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-card-label">💖 Love Story</div>
+                <p class="video-card-caption">Keep scrolling for more sweet birthday moments.</p>
+            </article>
         </div>
-        <div class="video-controls">
-            <button class="video-btn" id="playVideoBtn">▶ Play</button>
-            <button class="video-btn" id="pauseVideoBtn">⏸ Pause</button>
-            <button class="video-btn" id="fullscreenVideoBtn">✨ Fullscreen ✨</button>
-        </div>
-        <div class="download-actions">
-            <button class="video-btn download-btn" id="downloadVideoBtn">⬇️ Download Video</button>
-        </div>
-        <div class="video-message" id="videoMessage" style="margin-top:0.6rem; font-size:clamp(0.7rem,3vw,0.85rem); color:#a23d58;">💝 Click play to see my heartfelt wish! 💝</div>
     </div>
 
     <div class="message-box">
@@ -1091,79 +1175,38 @@
         }
     });
     
-    // Video Functions
-    const video = document.getElementById('birthdayVideo');
-    const videoPosterOverlay = document.getElementById('videoPosterOverlay');
-    const playBtn = document.getElementById('playVideoBtn');
-    const pauseBtn = document.getElementById('pauseVideoBtn');
-    const fullBtn = document.getElementById('fullscreenVideoBtn');
-    const videoProgressContainer = document.getElementById('videoProgressContainer');
-    const videoProgressBar = document.getElementById('videoProgressBar');
-    const videoProgressFilled = document.getElementById('videoProgressFilled');
-    const videoTimeDisplay = document.getElementById('videoTimeDisplay');
-    const modal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideoPlayer');
-    const closeModal = document.querySelector('.close-modal');
-    
+    // Multi-video cards interaction
+    const storyVideos = document.querySelectorAll('.story-video');
+
+    function pauseAllStoryVideos(exceptVideo = null) {
+        storyVideos.forEach((video) => {
+            if(video !== exceptVideo && !video.paused) {
+                video.pause();
+            }
+        });
+    }
+
+    storyVideos.forEach((video) => {
+        video.addEventListener('play', () => {
+            pauseAllStoryVideos(video);
+            createConfettiBurst(18);
+        });
+
+        video.addEventListener('ended', () => {
+            video.pause();
+            video.currentTime = 0;
+            video.load();
+        });
+    });
+
     function formatTime(seconds) {
         if(isNaN(seconds) || !isFinite(seconds)) return "00:00";
         const mins = Math.floor(seconds / 60);
         const secs = Math.floor(seconds % 60);
         return `${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
     }
-    function updateVideoProgress() {
-        if(video.duration && !isNaN(video.duration)) {
-            const percent = (video.currentTime / video.duration) * 100;
-            videoProgressFilled.style.width = percent + '%';
-            videoTimeDisplay.innerText = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
-        }
-    }
-    video.addEventListener('play', () => {
-        videoProgressContainer.classList.add('show');
-        if(videoPosterOverlay) videoPosterOverlay.style.display = 'none';
-    });
-    video.addEventListener('timeupdate', updateVideoProgress);
-    video.addEventListener('loadedmetadata', () => videoTimeDisplay.innerText = `00:00 / ${formatTime(video.duration)}`);
-    video.addEventListener('ended', () => {
-        if(videoPosterOverlay) videoPosterOverlay.style.display = 'block';
-        video.currentTime = 0;
-        video.pause();
-        videoProgressFilled.style.width = '0%';
-        videoTimeDisplay.innerText = `00:00 / ${formatTime(video.duration)}`;
-    });
-    playBtn.addEventListener('click', () => {
-        if(videoPosterOverlay) videoPosterOverlay.style.display = 'none';
-        video.play().catch(() => video.play());
-        createConfettiBurst(30);
-    });
-    pauseBtn.addEventListener('click', () => video.pause());
-    fullBtn.addEventListener('click', () => {
-        modalVideo.src = video.currentSrc || video.src;
-        modalVideo.load();
-        modalVideo.play();
-        modal.classList.add('active');
-    });
-    closeModal.addEventListener('click', () => { modal.classList.remove('active'); modalVideo.pause(); });
-    modal.addEventListener('click', (e) => { if(e.target === modal) { modal.classList.remove('active'); modalVideo.pause(); } });
-    videoProgressBar.addEventListener('click', (e) => {
-        const rect = videoProgressBar.getBoundingClientRect();
-        const percent = (e.clientX - rect.left) / rect.width;
-        if(video.duration) video.currentTime = percent * video.duration;
-    });
 
-    const downloadVideoBtn = document.getElementById('downloadVideoBtn');
     const saveImageBtn = document.getElementById('saveImageBtn');
-
-    downloadVideoBtn.addEventListener('click', () => {
-        const src = video.currentSrc || video.querySelector('source').src;
-        if(!src) return;
-        const link = document.createElement('a');
-        link.href = src;
-        link.download = src.split('/').pop().split('?')[0] || 'birthday_video.mp4';
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-    });
 
     saveImageBtn.addEventListener('click', async () => {
         const container = document.querySelector('.container');
